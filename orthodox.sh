@@ -11,6 +11,7 @@ upper_class_name=$(echo "$class_name" | tr '[:lower:]' '[:upper:]')
 
 # Create the header file
 cat <<EOF > "${class_name}.hpp"
+
 #ifndef ${upper_class_name}_HPP
 #define ${upper_class_name}_HPP
 
@@ -18,18 +19,18 @@ cat <<EOF > "${class_name}.hpp"
 #include <string>
 
 class ${class_name} {
-public:
-    // Constructors
-    ${class_name}();
-    ${class_name}(const ${class_name} &copy);
+    public:
+        // Constructors
+        ${class_name}();
+        ${class_name}(const ${class_name} &copy);
 
-    // Destructor
-    ~${class_name}();
+        // Destructor
+        ~${class_name}();
 
-    // Operators
-    ${class_name} & operator=(const ${class_name} &assign);
+        // Operators
+        ${class_name} & operator=(const ${class_name} &assign);
 
-private:
+    private:
 
 };
 
@@ -38,6 +39,7 @@ EOF
 
 # Create the implementation file
 cat <<EOF > "${class_name}.cpp"
+
 #include "${class_name}.hpp"
 
 // Constructors
